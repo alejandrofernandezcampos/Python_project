@@ -11,3 +11,7 @@ class DataFrame:
     #Allowing to call columns using the keys of the diccionary and indexation. object["key"]
     def __getitem__(self,colname):   
         return np.array(self.data[colname])
+
+    #The following code allows overwriting of the list using an indexing object["key"] = value
+    def _setitem_(self, index, value):
+            self.data[index] = value
