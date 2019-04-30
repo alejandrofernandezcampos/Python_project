@@ -7,3 +7,7 @@ class DataFrame:
             raise ValueError("DataFrame class accept only dictionaries")
 
         self.data = data
+
+    #Allowing to call columns using the keys of the diccionary and indexation. object["key"]
+    def __getitem__(self,colname):   
+        return np.array(self.data[colname])
