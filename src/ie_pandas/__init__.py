@@ -15,3 +15,10 @@ class DataFrame:
     #The following code allows overwriting of the list using an indexing object["key"] = value
     def _setitem_(self, index, value):
             self.data[index] = value
+
+    #The following code allows to get a specific row from the dataframe        
+    def get_row(self, index):
+        l = []
+        for i in self.data.keys():
+            l.append(self.data[i][index])
+        return l
