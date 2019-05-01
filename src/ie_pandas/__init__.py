@@ -22,3 +22,32 @@ class DataFrame:
         for i in self.data.keys():
             l.append(self.data[i][index])
         return l
+        
+    def sum(self):
+        # List to build with the summatory of each column
+        l = []
+        # Defining the types of objects that will be taken for the sum calculation
+        p_num_types = [int, float, complex]
+        np_num_types = [np.int_, np.float_, np.complex_]
+        # Two methods are used in case each column (key) is a list or a np.arrays:
+        # In case the column is a lists:
+        for columns in self.data.keys():
+            if type(self.data[columns]) == list:
+                c = 0
+                # If all values numeric, sum will be performed and added to the list.
+                for values in self.data[columns]:
+                    if type(values) in p_num_types:
+                        c += 1
+                if c == len(self.data[columns]):
+                    l.append(np.sum(self.data[columns]))
+            # In case the columns is a np.array:
+            else:
+                c = 0
+                for values in self.data[columns]:
+                    # We use now the list of accepted numeric types in np.arrays
+                    if values.dtype in np_num_types:
+                        c += 1
+                if c == len(self.data[columns]):
+                    l.append(np.sum(self.data[columns]))
+
+        return l   
