@@ -73,5 +73,38 @@ def test_median_data_frame_array():
     output_median = df_cl_y.median()
     
     assert output_median == expected_output_median
+    
 
+def test_max_data_frame_list():
+
+    x = {
+        "a": [9, 2, 5, 8],
+        "b": [True, False, False, True],
+        "c": ["rasds", "sdsd", "cds", "sd"],
+        "d": [1.4, 1.5, 3.6, 1.1, 1.3],
+    }
+    df_cl = DataFrame(x)
+
+    expected_output_max = [np.max(x["a"]), np.max(x["d"])]
+
+    output_max = df_cl.max()
+
+    assert output_max == expected_output_max
+    
+
+def test_max_data_frame_array():
+
+    y = {
+        "a": np.array([9, 2, 5, 8]),
+        "b": np.array([True, False, False, True]),
+        "c": np.array(["rasds", "sdsd", "cds", "sd"]),
+        "d": np.array([1.4, 1.5, 3.6, 1.1, 1.3]),
+    }
+    df_cl_y = DataFrame(y)
+
+    expected_output_max = [np.max(y["a"]), np.max(y["d"])]
+
+    output_max = df_cl_y.max()
+    
+    assert output_max == expected_output_max
 
