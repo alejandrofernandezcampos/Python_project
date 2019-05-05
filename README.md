@@ -22,23 +22,27 @@ pip install ie_pandas
 
 ## Usage ##
 
-```python
-import dataframe
+1. from the Python_project directory, type: 
 
-ie_sum
-ie_median
-ie_min
-ie_max
+```python
+python
 ```
 
-Command      | Description
--------------| -------------
-ie_sum       |
-ie_median    |
-ie_min       |
-ie_max       |
+2. then, execute:
+
+```python
+from ie_pandas import DataFrame
+```
 
 ## How to run Tests ##
+
+1. move to the Python_project folder
+
+2. run
+
+```python
+pytest
+```
 
 ## Contributing ##
 
