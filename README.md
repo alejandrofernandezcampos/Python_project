@@ -55,7 +55,7 @@ For general questions, consult ***python.ie.pandas.project@gmail.com***.
 
 And always remember:
 
-[!picture alt](https://codefluegel.com/wp-content/uploads/2017/05/in-case-of-fire-1-git-commit-2-git-push-3-leave-building2.png "git commit joke")
+![picture alt](https://codefluegel.com/wp-content/uploads/2017/05/in-case-of-fire-1-git-commit-2-git-push-3-leave-building2.png "git commit joke")
 [*Image Source*](https://codefluegel.com/wp-content/uploads/2017/05/in-case-of-fire-1-git-commit-2-git-push-3-leave-building2.png)
 
 ## Next Steps ##
