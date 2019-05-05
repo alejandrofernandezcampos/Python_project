@@ -87,6 +87,39 @@ class DataFrame:
 					l.append(np.median(self.data[columns]))
 		return(l)
 
+	def min(self):
+                l=[]
+                # Definition of object types used for the calculation of the sums as Integer, Float or Complex Number
+                p_num_types = [int, float, complex]
+                np_num_types = [np.int_, np.float_, np.complex_]
+                
+                # Different methods of finding the min will be used depending on wheter the columns is a list or a numpy array
+                
+                # CASE 1: The columns are lists:
+                for columns in self.data.keys():
+                            if type(self.data[columns]) == list:
+                                c = 0
+                                # If all values numeric, sum will be performed and added to the list.
+                                for values in self.data[columns]:
+                                    if type(values) in p_num_types:
+                                        c += 1
+                                        
+                                if c == len(self.data[columns]):
+                                # Sort the columns to be able to find the min
+                                s = np.sort(self.data[columns])
+                                l.append(s[0])
+                        # CASE 2: The columns are numpy arrays
+                         else:
+                                c = 0
+                                for values in self.data[columns]:
+                                    # We use now the list of accepted numeric types in np.arrays
+                                    if values.dtype in np_num_types:
+                                        c += 1
+                                if c == len(self.data[columns]):
+                                    #If all numeric, use of built numpy min
+                                    l.append(np.min(self.data[columns]))
+        return l
+
 	def max(self):
 		l = []
 		# Definition of object types used for the calculation of the sums as Integer, Float or Complex Number
