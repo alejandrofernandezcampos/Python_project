@@ -22,6 +22,23 @@ def test_sum_data_frame_list():
     
     assert output_sum == expected_output_sum
 
+
+def test_sum_data_frame_array():
+
+    y = {
+        "a": np.array([9, 2, 5, 8]),
+        "b": np.array([True, False, False, True]),
+        "c": np.array(["rasds", "sdsd", "cds", "sd"]),
+        "d": np.array([1.4, 1.5, 3.6, 1.1, 1.3]),
+    }
+    df_cl_y = DataFrame(y)
+
+    expected_output_sum = [np.sum(y["a"]), np.sum(y["d"])]
+
+    output_sum = df_cl_y.sum()
+    
+    assert output_sum == expected_output_sum
+
     
     
 def test_median_data_frame_list():
@@ -53,7 +70,7 @@ def test_median_data_frame_array():
 
     expected_output_median = [np.median(y["a"]), np.median(y["d"])]
 
-    output_median = df_cl.median()
+    output_median = df_cl_y.median()
     
     assert output_median == expected_output_median
 
