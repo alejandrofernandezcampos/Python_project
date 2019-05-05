@@ -106,10 +106,10 @@ class DataFrame:
                                         
                                 if c == len(self.data[columns]):
                                 # Sort the columns to be able to find the min
-                                s = np.sort(self.data[columns])
-                                l.append(s[0])
+                                	s = np.sort(self.data[columns])
+                                	l.append(s[0])
                         # CASE 2: The columns are numpy arrays
-                         else:
+                    		else:
                                 c = 0
                                 for values in self.data[columns]:
                                     # We use now the list of accepted numeric types in np.arrays
