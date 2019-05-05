@@ -71,10 +71,10 @@ class DataFrame:
 					s = np.sort(self.data[columns])
 					if len(self.data[columns]) % 2 != 0:
 						#If not even lenght, return the middle sorted position
-						l.append(s[round(len(s)/2)])
+						l.append(s[round(len(s) / 2)])
 					else:
 						#If even lenght, return the mean of the 2 median values
-						l.append((s[int(len(s)/2)]+s[int(len(s)/2)-1])/2)
+						l.append((s[int(len(s) / 2)] + s[int(len(s) / 2) - 1]) / 2)
 			#In case numpy arrays
 			else:
 				c = 0
